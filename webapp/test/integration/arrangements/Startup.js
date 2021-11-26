@@ -1,4 +1,5 @@
 sap.ui.define([
+<<<<<<< Upstream, based on origin/master
 	"sap/ui/test/Opa5",
 	"com/bp/zdemo/localService/mockserver",
 	"sap/ui/model/odata/v2/ODataModel"
@@ -39,6 +40,29 @@ sap.ui.define([
 		_clearSharedData: function () {
 			// clear shared metadata in ODataModel to allow tests for loading the metadata
 			ODataModel.mSharedData = { server: {}, service: {}, meta: {} };
+=======
+	"sap/ui/test/Opa5"
+], function (Opa5) {
+	"use strict";
+
+	return Opa5.extend("com.ppg.mygit.test.integration.arrangements.Startup", {
+
+		iStartMyApp: function (oOptionsParameter) {
+			var oOptions = oOptionsParameter || {};
+
+			// start the app with a minimal delay to make tests fast but still async to discover basic timing issues
+			oOptions.delay = oOptions.delay || 50;
+
+			// start the app UI component
+			this.iStartMyUIComponent({
+				componentConfig: {
+					name: "com.ppg.mygit",
+					async: true
+				},
+				hash: oOptions.hash,
+				autoWait: oOptions.autoWait
+			});
+>>>>>>> 58f7aec my initial commit @26.11.2021
 		}
 	});
 });

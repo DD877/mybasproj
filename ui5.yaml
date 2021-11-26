@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on origin/master
 specVersion: "2.5"
 metadata:
   name: com.bp.zdemo
@@ -29,3 +30,35 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: com.bp.zdemo
+=======
+specVersion: '1.0'
+metadata:
+  name: mygit
+type: application
+resources:
+  configuration:
+    propertiesFileSourceEncoding: UTF-8
+builder:
+  customTasks:
+    - name: webide-extension-task-updateManifestJson
+      beforeTask: generateManifestBundle
+      configuration:
+        appFolder: webapp
+        destDir: dist
+    - name: webide-extension-task-updateNeoApp
+      afterTask: generateVersionInfo
+      configuration:
+        destDir: dist
+        appFolder: webapp
+        nameSpace: com/ppg
+    - name: webide-extension-task-lint
+      afterTask: webide-extension-task-updateNeoApp
+      configuration:
+        destDir: dist
+        appFolder: webapp
+        nameSpace: com/ppg 
+    - name: webide-extension-task-resources
+      afterTask: webide-extension-task-lint
+      configuration:
+        nameSpace: com/ppg
+>>>>>>> 58f7aec my initial commit @26.11.2021

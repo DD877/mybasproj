@@ -1,4 +1,5 @@
 {
+<<<<<<< Upstream, based on origin/master
   "name": "zdemo",
   "version": "0.0.1",
   "private": true,
@@ -33,3 +34,22 @@
   },
   "sapuxLayer": "CUSTOMER_BASE"
 }
+=======
+  "name": "mygit",
+  "version": "0.0.1",
+  "description": "",
+  "devDependencies": {
+    "@ui5/cli": "1.13.0",
+    "@sap/ui5-builder-webide-extension": "1.0.x"
+  },
+  "scripts": {
+    "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension"
+    ]
+  },
+  "private": "true"
+}
+>>>>>>> 58f7aec my initial commit @26.11.2021
